@@ -3,7 +3,8 @@ import time
 import feedparser
 import re
 
-numOfTitles = 5
+numOfTitles = 20
+titleCounter = 0
 
 NewsFeed = feedparser.parse("https://www.tomshardware.com/feeds/rss2/articles.xml")
 ser = serial.Serial('/dev/cu.wchusbserial14210', 9600)
@@ -14,22 +15,31 @@ time.sleep(3)
 titles = [0] * numOfTitles
 for i in range(0,numOfTitles):
     curTitle = NewsFeed.entries[i].title
-    titles[i] = re.findall('.{1,78}', curTitle)
+    titles[i] = re.findall('.{1,128}', curTitle)
 print(titles)
+
+def printTitle():
+    for j in range(len(titles[titleCounter])):
+        print(titles[titleCounter][j])
+        encoded = (titles[titleCounter][j] + "\n").encode('utf-8')
+        ser.write(encoded)
+        print(len(titles[titleCounter][j]))
+        sleepVal = ((24 + (len(titles[titleCounter][j]) * 6)) * 0.05) + 1
+        print(sleepVal)
+        time.sleep(sleepVal)
+
+def animation():
+    encoded = ("<>\n").encode('utf-8')
+    ser.write(encoded)
 
 #write out each title to the serial port, by way of each 78 char segment of each title
 while(True):
-    for i in range(len(titles)):
-        for j in range(len(titles[i])):
-            print(titles[i][j])
-            encoded = (titles[i][j] + "\n").encode('utf-8')
-            ser.write(encoded)
-            print(len(titles[i][j]))
-            sleepVal = ((24 + (len(titles[i][j]) * 6)) * 0.05)
-            print(sleepVal)
-            time.sleep(sleepVal)
-
-
+    printTitle()
+    if titleCounter == numOfTitles - 1:
+        titleCounter = 0
+    else:
+        titleCounter = titleCounter + 1
+    
 
 
 
