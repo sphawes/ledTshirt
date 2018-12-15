@@ -15,7 +15,7 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, 3, 1, PIN,
   NEO_GRB + NEO_KHZ800);
 
 const uint16_t colors[] = {
-  matrix.Color(200, 200, 200)};
+  matrix.Color(0, 200, 0)};
 
 const byte numChars = 128;
 char receivedChars[numChars]; // an array to store the received data
@@ -27,7 +27,7 @@ void setup() {
   Serial.begin(9600);
   matrix.begin();
   matrix.setTextWrap(false);
-  matrix.setBrightness(40);
+  matrix.setBrightness(80);
   matrix.setTextColor(colors[0]);
   matrix.fillScreen(0);
   matrix.show();
