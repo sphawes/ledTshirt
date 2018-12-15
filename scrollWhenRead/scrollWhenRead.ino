@@ -15,7 +15,7 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, 3, 1, PIN,
   NEO_GRB + NEO_KHZ800);
 
 const uint16_t colors[] = {
-  matrix.Color(0, 200, 0)};
+    matrix.Color(250, 250, 250)};
 
 const byte numChars = 128;
 char receivedChars[numChars]; // an array to store the received data
