@@ -17,11 +17,18 @@ serialPort = "/dev/cu.wchusbserial14210"
 # STOP EDITS HERE #
 ###################
 
-
-titleCounter = 0
-NewsFeed = feedparser.parse(rssLink)
 ser = serial.Serial(serialPort, 9600)
 time.sleep(3)
+
+titleCounter = 0
+try:
+    NewsFeed = feedparser.parse(rssLink)
+except:
+    while(True):
+        encoded = ("Toms Hardware\n").encode('utf-8')
+        ser.write(encoded)
+        time.sleep(20)
+
 
 #getting titles from feed, saving them in array "titles" and cutting them into 128 char segments in case the titles are too long
 titles = [0] * numOfTitles
