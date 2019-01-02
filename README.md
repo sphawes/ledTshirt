@@ -1,6 +1,8 @@
 # Marquee Tee
 ## Tom's Hardware <> Stephen Hawes  
 
+![Demo Gif](https://github.com/sphawes/ledTshirt/raw/master/demoGif.gif)
+
 Welcome to the software guide for the Marquee Tee! This will also serve as a repositiory for all code needed to get up and running.
 
 ### Arduino  
