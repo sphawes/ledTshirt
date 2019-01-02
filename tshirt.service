@@ -1,0 +1,14 @@
+[Unit]
+Description=Start Text Stream Script
+After=network.target
+
+[Service]
+ExecStart=python3 sendText.py
+WorkingDirectory=/home/pi/ledTshirt/sendText
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
