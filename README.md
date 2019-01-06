@@ -36,4 +36,9 @@ This might prompt you for a password; just type in "raspberry" which is the defa
 sudo systemctl start tshirt.service
 ```
 
-Now the main script will run when you reboot your Pi! Awesome. Give it a try with `sudo reboot now`.
+Now the main script will run when you reboot your Pi! Awesome. But first we need to connect the Pi to wifi. Connecting to wifi is easier from the GUI. Start XFCE with this:
+
+```
+startx
+```
+Then click on the network icon in the upper right and connect. I recommend setting it up to connect to your phone's wifi hotspot so you can use the shirt on the go!
