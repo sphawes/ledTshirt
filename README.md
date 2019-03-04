@@ -1,9 +1,9 @@
-# Marquee Tee
+# T-Shirt News Ticker
 ## Tom's Hardware <> Stephen Hawes  
 
 ![Demo Gif](https://github.com/sphawes/ledTshirt/raw/master/demoGif.gif)
 
-Welcome to the software guide for the Marquee Tee! This will also serve as a repositiory for all code needed to get up and running.
+Welcome to the software guide for the T-Shirt News Ticker! This will also serve as a repositiory for all code needed to get up and running.
 
 ### Arduino  
 Go ahead and install the [latest stable version](https://www.arduino.cc/en/main/software) of the Arduino IDE on your computer. Then [download the git repository](https://github.com/sphawes/ledTshirt/archive/master.zip), and in "scrollWhenRead" find the Arduino sketch (called scrollWhenRead.ino) that interprets the data coming from the Raspberry Pi.  
